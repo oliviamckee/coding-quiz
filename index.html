@@ -21,10 +21,15 @@
         <div id="question">
             <h1 id="question-text"></h1>
             <div class="answer-choices"></div>
-            <!-- <button class="btn" id="answer1" type="button"></button>
-            <button class="btn" id="answer2" type="button"></button>
-            <button class="btn" id="answer3" type="button"></button>
-            <button class="btn" id="answer4" type="button"></button> -->
+        </div>
+        <div class="end-game hide">
+            <h2 id="end-game-title">All done!</h2>
+            <h3>Your final score is <span id="final-score"></span></h3>
+            <p>Please enter your initials and save your high score.</p>
+            <div id="new-score">
+                <input type="text" id="initials">
+                <button id="submit-score">Submit Score</button>
+            </div>
         </div>
     </main>
     <script src="./assets/script.js"></script>
