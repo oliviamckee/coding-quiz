@@ -1,3 +1,31 @@
 .hide {
     display: none;
 }
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#start-button {
+    width: min-content;
+}
+
+.answer-choices {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    margin: auto; 
+}
+
+
+button {
+    background-color: rebeccapurple;
+    color: white;
+    margin: 5px;
+    font-size: 20px; 
+}
+
+button:hover {
+    background-color: rgb(189, 36, 138);
+}

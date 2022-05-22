@@ -1,7 +1,7 @@
 //question data 
 var questions = [
     {
-        question: "Which operator means 'equal in value and type?",
+        question: "Which operator means 'equal in value and type'?",
         answers: ["a. =", "b. ==", "c. ===", "d. =&="], 
         correctAnswerIndex: 2
     },
@@ -26,6 +26,7 @@ var questions = [
         correctAnswerIndex: 1
     }
   ]; 
+
 var startButtonEl = document.getElementById("start-button");
 var timerEl = document.getElementById("timer");
 var time = 60;
@@ -40,6 +41,9 @@ var stopTimer = false;
 var submitScoreEl = document.getElementById("submit-score");
 var highScorePage = document.getElementById("high-score-page");
 var scoresEl = document.getElementById("scores");
+
+
+
 
 //timer starts when start button clicked 
 function startGame() {
@@ -78,7 +82,6 @@ function startQuestions() {
         answerButtonEl.textContent=choice;
         answerChoicesEl.appendChild(answerButtonEl);
         answerButtonEl.addEventListener("click", answerQuestion)
-   
     });
 }
 
@@ -105,25 +108,22 @@ function endGame() {
 }
 
 // store high score to local storage w initials 
-submitScoreEl.addEventListener("click", highScores)
+submitScoreEl.addEventListener("click", highScores);
 function highScores() {
     console.log("clicked!");
     endGameTextEl.classList.add("hide");
     highScorePage.classList.remove("hide");
     var scoreEl = document.createElement("div")
-    scoreEl.textContent=initials.value + " : " + time;
-    scoresEl.appendChild(scoreEl);
-    localStorage.setItem("high-score", time);
-    localStorage.setItem("name", initials.value)
     
+    if (time > (localStorage.getItem("high-score"))) {
+        localStorage.setItem("high-score", time);
+        localStorage.setItem("name", initials.value)
+        scoreEl.textContent=initials.value + " : " + time;
+        scoresEl.appendChild(scoreEl);
+    }
+    else {
+        scoreEl.textContent=initials.value + " : " + localStorage.getItem("high-score");
+        scoresEl.appendChild(scoreEl);
+    }
 }
-
-
-// var answerButtonEl = document.createElement("button");
-//         answerButtonEl.textContent=choice;
-//         answerChoicesEl.appendChild(answerButtonEl);
-//         answerButtonEl.addEventListener("click", answerQuestion)
-
-
-
 

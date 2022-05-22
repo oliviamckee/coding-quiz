@@ -9,13 +9,12 @@
 </head>
 <body>
     <header>
-        <a href="./assets/high-scores.html">View high scores</a>
         <div>Time: <span id="timer"></span></div>
     </header>
     <main>
         <div id="start-game-text">
             <h1>Coding Challenge</h1>
-            <p>Click start to begin the quiz.</p>
+            <p>Click start to begin the quiz. You will have 60 seconds to answer 5 questions about JavaScript. Each wrong answer deducts 10 seconds from the clock. Your final score is the time remaining on the clock. </p>
         </div>
         <button class="btn" id="start-button" type="button">Start</button>
         <div id="question">
@@ -34,7 +33,6 @@
         <div id="high-score-page" class="hide">
             <h2>High Score</h2>
             <div id="scores"></div>
-            <button id="start-over">Start Over</button>
         </div>
     </main>
     <script src="./assets/script.js"></script>
