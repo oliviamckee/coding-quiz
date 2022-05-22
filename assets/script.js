@@ -37,7 +37,9 @@ var questionIndex = 0
 var endGameTextEl = document.querySelector(".end-game");
 var finalScoreEl = document.getElementById("final-score");
 var stopTimer = false;
-var submitScore = document.getElementById("submit-score");
+var submitScoreEl = document.getElementById("submit-score");
+var highScorePage = document.getElementById("high-score-page");
+var scoresEl = document.getElementById("scores");
 
 //timer starts when start button clicked 
 function startGame() {
@@ -102,12 +104,25 @@ function endGame() {
     finalScoreEl.textContent=time; 
 }
 
+// store high score to local storage w initials 
+submitScoreEl.addEventListener("click", highScores)
 function highScores() {
-    localStorage.setItem("high-score", time)
+    console.log("clicked!");
+    endGameTextEl.classList.add("hide");
+    highScorePage.classList.remove("hide");
+    var scoreEl = document.createElement("div")
+    scoreEl.textContent=initials.value + " : " + time;
+    scoresEl.appendChild(scoreEl);
+    localStorage.setItem("high-score", time);
+    localStorage.setItem("name", initials.value)
+    
 }
 
 
-// store high score to local storage w initials 
+// var answerButtonEl = document.createElement("button");
+//         answerButtonEl.textContent=choice;
+//         answerChoicesEl.appendChild(answerButtonEl);
+//         answerButtonEl.addEventListener("click", answerQuestion)
 
 
 
